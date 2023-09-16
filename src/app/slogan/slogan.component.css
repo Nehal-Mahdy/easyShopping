@@ -1,0 +1,13 @@
+.text-container {
+    position: absolute;
+    color:#394f63  ;
+    /* background-color:#eeebe4; */
+    padding:1 1rem;
+    top: 20%;
+    left: 10%;
+    width:20%;
+    height: 10%;
+}
+.slogan{
+    line-height:30px;
+}

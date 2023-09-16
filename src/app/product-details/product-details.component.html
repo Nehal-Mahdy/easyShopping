@@ -1,0 +1,21 @@
+<div class="container-fluid text-center mt-5" style="width:40%">
+    <div class="card " style="color: #567189;">
+    <img [src]="productId.image" width="30%" height="300px" class="card-img-top" >
+    <div class="card-body">
+
+      <h4 class="card-title" style="color: #394f63 ;">{{productId.title}}</h4>
+
+     <span class="card-text text-danger"  *ngIf="productId.stock == 0 ;else elseBlock">Out of Stock</span>
+     <ng-template #elseBlock>Still In Stock</ng-template>
+
+     <h5 class="card-title">{{ productId.price | currencyEg }}</h5>
+        
+     <h6 class="card-text">{{productId.description}}</h6>
+   
+    </div>
+    <div>
+        <br>
+        <button class="btn mb-3"  style="background-color: #567189; color: rgb(237, 232, 226);">Add To Cart</button>
+    </div>
+  </div>
+</div>

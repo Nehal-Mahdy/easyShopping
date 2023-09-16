@@ -2,7 +2,13 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    
     "baseUrl": "./",
+    //to read json file
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    //
+
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
