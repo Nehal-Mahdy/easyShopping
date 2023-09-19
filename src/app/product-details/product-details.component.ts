@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import productData from '../../assets/products.json';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-product-details',
@@ -8,11 +9,12 @@ import productData from '../../assets/products.json';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent {
-constructor (private activeRoute : ActivatedRoute){}
+constructor (private activeRoute : ActivatedRoute, private productDetail : ProductsService){}
 
+productId:any;
 ngOnInit(){
-  console.log(this.activeRoute.snapshot.params['id'])
+  const paramsId =this.activeRoute.snapshot.params['id']
+  this.productDetail.getProductDetails(paramsId).subscribe((data)=> this.productId=(data))
 }
 
-productId : any = productData[this.activeRoute.snapshot.params['id']-1]
 }

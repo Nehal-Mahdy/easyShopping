@@ -5,8 +5,9 @@
   "title":"Men's SportsWear",
   "description":"Workingout is much more comfortable now",
   "image": "https://tiimg.tistatic.com/fp/1/008/234/shrink-resistance-mens-sports-wear-blue-and-white-plain-tracksuits-089.jpg",
-  
-  "stock":3
+
+  "stock":3,
+  "quantity":0
   },
   {
   "id": 2,    
@@ -14,7 +15,9 @@
   "title":"Men's SportsWear",
   "description":"Workingout is much more comfortable now",
   "image": "https://nextage.pk/cdn/shop/files/sportswear-tracksuit-online-pakistan.jpg?v=1685968480&width=720",
-  "stock": 2
+  "stock": 2,
+  "quantity":0
+
   },
   {
   "id": 3,
@@ -22,7 +25,9 @@
   "title":"Woman's SportsWear",
   "description":"Be fit and trendy",
   "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS5_ALilcCDmH2ZVYSnmoiE8IJQgbM-3PVHw&usqp=CAU",
-  "stock":0
+  "stock":0,
+  "quantity":0
+
   },
   {
   "id": 4,
@@ -30,7 +35,9 @@
   "title":"Woman's SportsWear",
   "description":"Be fit and trendy",
   "image": "https://assets.pourmoi.co.uk/58/en/sportswear/2022-Website-Desktop-Mockup-Category-Sportswear-Oct_17-V2.jpg?maxwidth=295",
-  "stock": 0
+  "stock": 0,
+  "quantity":0
+
   },
   {
   "id": 5,
@@ -38,7 +45,9 @@
   "title":"Woman's SportsWear",
   "description":"Be fit and trendy",
   "image": "https://www.yellowsubtrading.co.za/cdn/shop/products/Screenshot_20210215_082630_com.instagram.android_edit_151119861889961_700x700.jpg?v=1686661008",
-  "stock":0
+  "stock":0,
+  "quantity":0
+
   },
   {
   "id": 6,
@@ -46,7 +55,9 @@
   "title":"Men's SportsWear",
   "description":"Workingout is much more comfortable now",
   "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-BorfcoBL2ZBRN55klLkWu6R6-Ml5l43SIQ&usqp=CAU",
-  "stock":3
+  "stock":3,
+  "quantity":0
+
   },
   {
   "id": 7,
@@ -54,7 +65,9 @@
   "title":"Woman's SportsWear",
   "description":"Be fit and trendy",
   "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQskE-nKF8zgI2yR-6KuMGr1N--L0BLrPyTdw&usqp=CAU",
-  "stock":0
+  "stock":0,
+  "quantity":0
+
   },
   {
   "id": 8,
@@ -62,7 +75,9 @@
   "title":"Woman's SportsWear",
   "description":"Be fit and trendy",
   "image": "https://sigmafiteg.com/cdn/shop/products/winsome-orchid-smoky-long-sleeve-762966_1024x1024.jpg?v=1673900047",
-  "stock":5
+  "stock":5,
+  "quantity":0
+
   },
   {
   "id": 9,
@@ -70,7 +85,9 @@
   "title":"Men's SportsWear",
   "description":"Workingout is much more comfortable now",
   "image": "https://www.russellathletic.com/dw/image/v2/ABAH_PRD/on/demandware.static/-/Sites-russell_us-Library/default/dw0dce9b6d/hero-header/2023-01-04-BOGO-CP-Hero-Mobile-768x819.jpg",
-  "stock":6
+  "stock":6,
+  "quantity":0
+
   },
   {
   "id": 10,
@@ -78,7 +95,9 @@
   "title":"Men's SportsWear",
   "description":"Workingout is much more comfortable now",
   "image": "https://static.fibre2fashion.com/MemberResources/LeadResources/1/2019/6/Seller/19164890/Images/19164890_0_men-s-sports-wear.jpg?tr=w-260,h-260,cm-pad_resize,bg-F3F3F3",
-  "stock":4
+  "stock":4,
+  "quantity":0
+
   },
   {
   "id": 11,
@@ -86,7 +105,9 @@
   "title":"Woman's SportsWear",
   "description":"Be fit and trendy",
   "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR28MTEsz-GU4vsBvc7z-FlZuynTB5_BJ2XBA&usqp=CAU",
-  "stock":0
+  "stock":0,
+  "quantity":0
+
   },
   {
   "id": 12,
@@ -94,6 +115,7 @@
   "title":"Woman's SportsWear",
   "description":"Be fit and trendy",
   "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk-tpcxrEH4xj47H1Z9YwEVz5KlAt-dtoDLW2aPdPaxK6DgJA0ClT0LbkeyfcIlSBCpjc&usqp=CAU",
-  "stock":5
+  "stock":5,
+  "quantity":0
   }
   ]

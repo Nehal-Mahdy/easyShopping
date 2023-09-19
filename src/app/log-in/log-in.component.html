@@ -1,1 +1,64 @@
-<p>log-in works!</p>
+<div class="vh-25 d-flex justify-content-center align-items-center mt-5" >
+       
+    <div class="container-fluid w-75 mt-5">
+        
+    <div class="row d-flex justify-content-center">
+      
+        <div class="col-12 col-md-8 col-lg-6">
+          <div class="card bg-white ">
+            <div class="card-body p-5">
+                <div class="mb-3 ">
+                  <form #loginForm="ngForm" (ngSubmit)="submitLogin(loginForm)">
+                  <label for="email" class="form-label " >Email address</label>
+                  <input type="email" class="form-control" id="email" 
+                  name="email" required ngModel email  #email="ngModel" 
+                  placeholder="name@example.com">
+
+                  <div *ngIf="email.touched && email.invalid" id="email" class="form-text mb-2 text-danger" >
+                   <small *ngIf="email.errors?.['required']">
+                    please, Enter your Email
+                   </small> 
+                   <small *ngIf="email.errors?.['email']">
+                    Invalid Email
+                   </small> 
+                   </div>
+            
+                <div class="mb-3">
+                  <label for="password" class="form-label ">Password</label>
+                  <!-- adding name and ngmodel -->
+                  <input type="password"
+                   name="pass" ngModel #pass="ngModel" required password
+                   class="form-control" id="password" placeholder="*******">
+                  
+                   <div *ngIf="pass.touched && pass.invalid" id="pass" class="form-text mb-2 text-danger" >
+                    <small *ngIf="pass.errors?.['required']">
+                     please, Enter your Password
+                    </small> 
+                    </div>
+                   
+                </div>
+                <div class="d-grid">
+                  <button class="btn  bg-opacity-75 fw-bold "  id="signIn" 
+                  type="submit" [disabled]="loginForm.invalid"
+                   style="   background-color: #567189; color: #eeebe4 ;">Login</button>
+                </div>
+
+              </form>
+              <div>
+                <p class="mb-0  text-center">Don't have an account? 
+                    <a routerLink="../register" class="text-warning text-opacity-75 fw-bold">
+                    Register</a></p>
+              </div>
+
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+

@@ -1,1 +1,176 @@
-<p>register works!</p>
+<div class="vh-25 d-flex justify-content-center align-items-center mt-5">
+  <div class="container-fluid w-75">
+    <div class="row d-flex justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <div class="card bg-white">
+          <div class="card-body p-5">
+            <form [formGroup]="registerForm" (ngSubmit)="submitRegister()">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input
+                  formControlName="name"
+                  type="text"
+                  id="name"
+                  class="form-control"
+                />
+
+                <div
+                  *ngIf="
+                    registerForm.controls['name'].touched &&
+                    registerForm.controls['name'].invalid
+                  "
+                  class="form-text mb-2 text-danger"
+                >
+                  <small
+                    *ngIf="registerForm.controls['name'].errors?.['required']"
+                  >
+                    please, Enter your Name
+                  </small>
+                  <small
+                    *ngIf="registerForm.controls['name'].errors?.['minlength']"
+                  >
+                    Minimum length is 10
+                  </small>
+                  <small
+                    *ngIf="registerForm.controls['name'].errors?.['pattern']"
+                  >
+                    please, Enter your Full Name
+                  </small>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input
+                  formControlName="email"
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="name@example.com"
+                />
+
+                <div
+                  *ngIf="
+                    registerForm.controls['email'].touched &&
+                    registerForm.controls['email'].invalid
+                  "
+                  id="email"
+                  class="form-text mb-2 text-danger"
+                >
+                  <small
+                    *ngIf="registerForm.controls['email'].errors?.['required']"
+                  >
+                    please, Enter your Email
+                  </small>
+                  <small
+                    *ngIf="registerForm.controls['email'].errors?.['pattern']"
+                  >
+                    Invalid Email
+                  </small>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="username" class="form-label">User Name</label>
+                <input
+                  formControlName="userName"
+                  type="text"
+                  id="username"
+                  class="form-control"
+                />
+                <div
+                  *ngIf="
+                    registerForm.controls['userName'].touched &&
+                    registerForm.controls['userName'].invalid
+                  "
+              
+                  class="form-text mb-2 text-danger"
+                >
+                  <small
+                    *ngIf="registerForm.controls['userName'].errors?.['required']"
+                  >
+                    please, Enter User Name
+                  </small>
+                  <small
+                    *ngIf="registerForm.controls['userName'].errors?.['pattern']"
+                  >
+                    Invalid User Name
+                  </small>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+
+                <input
+                  formControlName="pass"
+                  type="password"
+                  name="pass"
+                  class="form-control"
+                  id="password"
+                />
+                
+                  <div
+                    *ngIf="registerForm.controls['pass'].touched && registerForm.controls['pass'].invalid"
+                    class="form-text mb-2 text-danger"
+                  >
+                    <small *ngIf="registerForm.controls['pass'].errors?.['required']">
+                      please, Enter your Password
+                    </small>
+                    <small *ngIf="registerForm.controls['pass'].errors?.['pattern']">
+                      Minimum eight characters, at least one letter and one number
+                      </small>
+                  </div>
+              </div>
+              <div class="mb-3">
+                <label for="confirmPass" class="form-label"
+                  >Confirm Password</label
+                >
+                <input
+                  formControlName="confirmPass"
+                  type="password"
+                  name="confirmPass"
+                  id="confirmPass"
+                  class="form-control"
+                />
+
+                <div
+                *ngIf="registerForm.controls['confirmPass'].touched && registerForm.controls['confirmPass'].invalid"
+                class="form-text mb-2 text-danger"
+              >
+                <small *ngIf="registerForm.controls['confirmPass'].errors?.['required']">
+                  please, Renter your Password
+                </small>
+                
+              </div>
+
+
+              </div>
+
+              <div class="d-grid">
+                <button
+                [disabled]="registerForm.invalid"
+                  class="btn bg-opacity-75 fw-bold"
+                  type="submit"
+                  style="background-color: #567189; color: #eeebe4"
+                >
+                  Register
+                </button>
+              </div>
+            </form>
+            <div>
+              <p class="mb-0 text-center">
+                Already have an account?
+                <a
+                  routerLink="../log-in"
+                  class="text-warning text-opacity-75 fw-bold"
+                >
+                  Log In</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
