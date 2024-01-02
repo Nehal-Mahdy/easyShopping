@@ -7,15 +7,16 @@
 
      <span class="card-text text-danger"  *ngIf="productId.stock == 0 ;else elseBlock">Out of Stock</span>
      <ng-template #elseBlock>Still In Stock</ng-template>
-
-     <h5 class="card-title">{{ productId.price | currencyEg }}</h5>
+     
+     <h5 class="card-title">Price: {{ productId.price | currencyEg }}</h5>
         
-     <h6 class="card-text">{{productId.description}}</h6>
-   
+     <h6 class="card-text">Description: {{productId.description}}</h6>
+     <h6 class="card-text">Discount: {{productId.discountPercentage}} %</h6>
+
     </div>
     <div>
         <br>
-        <button class="btn mb-3"  style="background-color: #567189; color: rgb(237, 232, 226);">Add To Cart</button>
+        <button class="btn mb-3"  (click)="addTocart(productId)" style="background-color: #567189; color: rgb(237, 232, 226);">Add To Cart</button>
     </div>
   </div>
 </div>

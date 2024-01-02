@@ -1,12 +1,15 @@
 <section class="h-100" style="background-color: #eee">
   <div class="container h-100 py-5">
     <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-10">
+   
         <div class="d-flex justify-content-between align-items-center mb-4">
           <h3 class="fw-normal mb-0">Shopping Cart</h3>
         </div>
 
-        <div
+        <table>
+
+        
+        <tr
           class="card rounded-3 mb-4"
           *ngFor="let item of items; let i = index"
         >
@@ -29,15 +32,8 @@
                   <i class="fas fa-minus"></i>
                 </button>
 
-                <input
-                  id="form1"
-                  min="1"
-                  name="quantity"
-                  [value]="item.quantity"
-                  type="number"
-                  class="form-control form-control-sm"
-                />
 
+                <input type="number" class="form-control" [value]="counter" >
                 <button
                   class="btn btn-link px-2"
                   (click)="increaseQuantity(item, i)"
@@ -46,34 +42,40 @@
                 </button>
               </div>
               <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                <h5 class="mb-0">{{ item.price | currencyEg }}</h5>
+                <h5 class="mb-0">{{ item.price| currencyEg }}</h5>
               </div>
               <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                <span class="text-danger" (click)="removeitem(i)"
+                <span class="text-danger" (click)="removeitem(item,i)"
                   ><i class="fas fa-trash fa-lg"></i
                 ></span>
               </div>
             </div>
           </div>
-        </div>
+        </tr>
 
         <div class="card mb-4 align-items-center">
           <div class="card-body p-4">
             <div>
               <p class="small text-muted mb-4 pb-2">Total</p>
-              <p class="lead fw-normal mb-0">{{ price }}</p>
+              <h4>{{totalPrice}}</h4>
+              <p class="lead fw-normal mb-0"></p>
             </div>
           </div>
         </div>
 
-        <div class="card align-items-center">
+        <div class="card align-items-center ">
           <div class="card-body">
             <button type="button" class="btn btn-warning btn-lg">
               Proceed to Pay
             </button>
+            <br>
+            <br>
+            <button class="btn btn-warning btn-lg ms-4" (click)="clearCart()">Clear Cart</button>
           </div>
         </div>
-      </div>
+         </table>
+        </div>
+ 
     </div>
-  </div>
+ 
 </section>

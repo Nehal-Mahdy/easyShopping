@@ -18,10 +18,9 @@ goTo(id : number){
 }
 
 addTocart(product :any){
+
   this.cartService.addToCart(product)
-  product.quantity++;
-  this.product.price;
-  console.log(this.product)
+    
   // window.alert('Your product has been added to the cart!');
 }
 }

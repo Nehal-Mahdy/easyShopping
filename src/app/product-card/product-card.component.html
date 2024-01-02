@@ -1,19 +1,39 @@
-<div class="card ">
-    <img [src]="product.images[0]" width="30%" height="300px" class="card-img-top" >
-    <div class="card-body" style="color: #567189;" >
+<div class="card">
+  <div routerLink="/product-details/{{product.id}}">
+  <img
+    [src]="product.images[0]"
+    width="30%"
+    height="300px"
+    class="card-img-top"
+  />
+  <div class="card-body" style="color: #567189">
+    <h4 class="card-title" style="color: #394f63">{{ product.title }}</h4>
 
-    <h4 class="card-title" style="color: #394f63 ;">{{product.title}}</h4>
+    <span
+      class="card-text text-danger"
+      *ngIf="product.stock == 0; else elseBlock"
+      >Out of Stock</span
+    >
+    <ng-template #elseBlock>Still In Stock</ng-template>
 
-     <span class="card-text text-danger"   *ngIf="product.stock == 0 ; else elseBlock">Out of Stock</span>
-     <ng-template #elseBlock>Still In Stock</ng-template>
-
-     <h5 class="card-text">{{ product.price | currencyEg }}</h5>
-     
-      
-    </div>
-    <div>
-        <button class="btn mb-2" (click)="goTo(product.id)" style="background-color: rgb(237, 232, 226);; color: #567189;">Details</button>
-        <br>
-        <button class="btn mb-3" (click)="addTocart(product)"  style="background-color: #567189; color: rgb(237, 232, 226);">Add To Cart</button>
-    </div>
+    <h5 class="card-text">{{ product.price | currencyEg }}</h5>
   </div>
+</div>
+  <div>
+    <button
+      class="btn mb-2"
+      (click)="goTo(product.id)"
+      style="background-color: rgb(237, 232, 226); color: #567189"
+    >
+      Details
+    </button>
+    <br />
+    <button
+      class="btn mb-3"
+      (click)="addTocart(product)"
+      style="background-color: #567189; color: rgb(237, 232, 226)"
+    >
+      Add To Cart
+    </button>
+  </div>
+</div>

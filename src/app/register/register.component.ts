@@ -42,7 +42,7 @@ constructor(){
 
 submitRegister(){
   console.log(this.registerForm)
+  location.replace('product-list')
 }
-
 
 }

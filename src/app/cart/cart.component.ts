@@ -1,37 +1,44 @@
-import { Component ,OnInit} from '@angular/core';
+import { Component} from '@angular/core';
 import { CartService } from '../services/cart.service';
+import { count } from 'rxjs';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.css'],
 })
 export class CartComponent {
- constructor(private cartService:CartService){}
- items = this.cartService.getItems();
-quantity !: number;
-price !: number;
- addTocart(item :any){
-  this.cartService.addToCart(item)
-  // window.alert('Your product has been added to the cart!');
-}
+  constructor(private cartService: CartService) {}
+  ngOnInit() {
+    this.cartService.getCounterVal().subscribe((val) => (this.counter = val));
+  }
+  counter: number = 0;
+  items = this.cartService.getItems();
+  price!: number;
+  
+ totalPrice : number = this.items.reduce((accumulator, item) => {
+    return accumulator + item.price;
+  }, 0);
 
-removeitem(index: number) {
-  this.cartService.removeitem(index);
-}
+  removeitem(item : any, index: number) {
+    this.cartService.removeitem(index);
+    this.totalPrice = this.totalPrice - item.price
+  }
 
+  increaseQuantity(item: any, i: number) {
+    this.price= item.price
+    this.cartService.setCounterVal(++this.counter)
+    item.quantity = this.counter
+    item.price= this.price * item.quantity;
+    this.totalPrice = this.totalPrice+this.price
+    console.log(item);
+  }
 
-increaseQuantity(item : any, i : number){
-this.quantity =  this.items[i].quantity++;
-this.price = this.items[i].price;
-this. price= this.quantity * this.items[i].price
-
-}
-
-
-decrease(item:any, i:number){
-  this.quantity =  this.items[i].quantity--;
-  this.price = this.items[i].price;
-  this. price= this.quantity * this.items[i].price
-}
-
+  decrease(item: any,i: number) {
+    this.cartService.setCounterVal(--this.counter);
+    item.price= item.price - this.price;
+  }
+  clearCart(){
+    this.items=[]
+    this.totalPrice=0;
+  }
 }
